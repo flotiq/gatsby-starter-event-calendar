@@ -2,7 +2,10 @@
   "name": "gatsby-starter-event-calendar",
   "version": "1.0.0",
   "description": "Starter for Gatsby to display information about events in a nice and clean way",
-  "author": "Ema Suriano <emanuel.suriano@gmail.com>",
+  "author": "Ema Suriano <emanuel.suriano@gmail.com>, Flotiq.com <hello@flotiq.com>",
+  "engines": {
+    "node": "10.x"
+  },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
     "date-fns": "^1.30.1",
@@ -42,7 +45,7 @@
     "gatsby",
     "calendar",
     "events",
-    "google spreadsheet"
+    "flotiq.com"
   ],
   "scripts": {
     "build": "gatsby build",
@@ -53,11 +56,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EmaSuriano/gatsby-starter-event-calendar.git"
+    "url": "git+https://github.com/flotiq/gatsby-starter-event-calendar.git"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/EmaSuriano/gatsby-starter-event-calendar/issues"
+    "url": "https://github.com/flotiq/gatsby-starter-event-calendar/issues"
   },
-  "homepage": "https://github.com/EmaSuriano/gatsby-starter-event-calendar#readme"
+  "homepage": "https://github.com/flotiq/gatsby-starter-event-calendar#readme"
 }
