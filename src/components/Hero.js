@@ -57,6 +57,7 @@ const Hero = () => (
               direction={size === 'small' ? 'column' : 'row'}
               margin={{ top: 'large' }}
               gap="medium"
+              style={{minHeight: 'auto'}}
             >
               <Button
                 href="#calendars"
