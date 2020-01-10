@@ -68,17 +68,6 @@ const Hero = () => (
                 a11yTitle="See all the events"
                 primary
               />
-              <Button
-                href={appConfig.formLink}
-                label={
-                  <Text size="large" margin="small">
-                    Add your event!
-                  </Text>
-                }
-                a11yTitle="Click to add your event"
-                color="secondary"
-                target="_blank"
-              />
             </Box>
           </Box>
         )}

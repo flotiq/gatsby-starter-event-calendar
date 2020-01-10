@@ -11,40 +11,44 @@ import ConfigContext from '../components/ConfigContext'
 // override this query with your own questions!
 const SPREADSHEET_QUERY = graphql`
   query eventsQuery {
-    allGoogleSheetEventsRow {
-      edges {
-        node {
-          id
-          eventName: whatisthename
-          date: when
-          place: where
-          eventLink: linktotheevent
+    allFlotiqEvent(sort: {fields: flotiqInternal___createdAt, order: DESC}) {
+        edges {
+          node {
+            gallery {
+              extension
+              id
+            }
+            description
+            date
+            address
+            name
+            slug
+          }
         }
       }
-    }
   }
-`
+`;
 
 class CalendarPage extends PureComponent {
   initialState = {
     currentDay: new Date(),
     eventsOfTheDay: [],
     showModal: false,
-  }
+  };
 
-  state = this.initialState
+  state = this.initialState;
 
-  hideModal = () => this.setState(this.initialState)
+  hideModal = () => this.setState(this.initialState);
 
   showModal = (eventsOfTheDay, currentDay) =>
     this.setState({
       currentDay,
       eventsOfTheDay,
       showModal: true,
-    })
+    });
 
   render() {
-    const { currentDay, eventsOfTheDay, showModal } = this.state
+    const { currentDay, eventsOfTheDay, showModal } = this.state;
 
     return (
       <Layout>

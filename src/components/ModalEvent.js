@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layer, Box, Text, Button } from 'grommet'
+import {Layer, Box, Text, Button, Image} from 'grommet'
 import { FormClose } from 'grommet-icons'
 import format from 'date-fns/format'
 import PropTypes from 'prop-types'
@@ -58,24 +58,24 @@ const ModalEvent = ({ hideModal, currentDay, events }) => (
               size="large"
               color="calendar-modal-text"
             >
-              {event.eventName}
+              {event.name}
             </Text>
 
-            {event.place && (
-              <Text a11yTitle="Event place" color="calendar-modal-text">
-                {event.place}
+            {event.address && (
+              <Text a11yTitle="Event address" color="calendar-modal-text">
+                {event.address}
               </Text>
             )}
-
-            <Box margin={{ top: 'medium' }} width="xsmall">
-              <Button
-                href={event.eventLink}
-                label="Link"
-                a11yTitle="Event link"
-                target="_blank"
-                primary
-              />
-            </Box>
+              {event.description && (
+                  <Text a11yTitle="Event description" color="calendar-modal-text">
+                      <section dangerouslySetInnerHTML={{ __html: event.description }} />
+                  </Text>
+              )}
+              <div style={{display: 'flex'}}>
+              {event.gallery && event.gallery.map((image) =>
+                  <Image fit="contain" src={`${process.env.GATSBY_FLOTIQ_BASE_URL}/image/100x0/${image.id}.${image.extension}`} a11yTitle="gallery image" />
+              )}
+              </div>
           </Box>
         </Box>
       ))}

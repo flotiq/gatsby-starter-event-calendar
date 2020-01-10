@@ -6,4 +6,4 @@ module.exports = {
     'react/forbid-prop-types': 'off',
   },
   parser: 'babel-eslint',
-}
+};
