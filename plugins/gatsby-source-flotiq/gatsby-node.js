@@ -51,10 +51,10 @@ exports.createSchemaCustomization = ({ actions }) => {
     type FlotiqEvent implements Node {
       slug: String!
       name: String!
-      description: String!
-      address: String!
+      description: String
+      address: String
       date: String!
-      gallery: [FlotiqGallery]!
+      gallery: [FlotiqGallery]
       flotiqInternal: FlotiqInternal!
     }
     type FlotiqGallery {
