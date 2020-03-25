@@ -33,8 +33,8 @@ The main data source of this starter is a Event Content Type in [Flotiq.com](htt
 The last step is to configure our application to know from where it has to fetch the data, this is going to be made by using `environment variables`. You need to create a file called `.env` inside the root of the directory, with the following structure:
 
 ```js
-GATSBY_FLOTIQ_BASE_URL="https://api.flotiq.com"
-FLOTIQ_API_KEY="YOUR API KEY"
+GATSBY_FLOTIQ_BASE_URL=https://api.flotiq.com
+FLOTIQ_API_KEY=YOUR API KEY
 ```
 
 To get YOUR API KEY check out [documentation](https://flotiq.com/docs/API/).
