@@ -11,7 +11,7 @@ import ConfigContext from '../components/ConfigContext'
 // override this query with your own questions!
 const SPREADSHEET_QUERY = graphql`
   query eventsQuery {
-    allFlotiqEvent(sort: {fields: flotiqInternal___createdAt, order: DESC}) {
+    allEvent(sort: {fields: flotiqInternal___createdAt, order: DESC}) {
         edges {
           node {
             gallery {
