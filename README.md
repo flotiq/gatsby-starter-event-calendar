@@ -39,6 +39,16 @@ FLOTIQ_API_KEY=YOUR API KEY
 
 To get YOUR API KEY check out [documentation](https://flotiq.com/docs/API/).
 
+ If you wish to import example events to your account, before running `gatsby develop` run:
+        
+```sh
+node ./example/importExample.js
+```
+
+It will add 5 events to your Flotiq account.
+
+_Note: You need to put your Read and write API key in `.env` for import to work. You don't need Event content type in your account. If you already have events with ids `event-1`, `event-2`, `event-3`, `event-4`, and `event-5` they will be overwritten._
+
 After this you can start development:
 ```
 gatsby develop
