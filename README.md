@@ -7,7 +7,7 @@ Gatsby Starter - Event Calendar
 
 This is a [Gatsby](https://gatsbyjs.org) starter project for a event calendar. It's configured to pull events data from [Flotiq](https://flotiq.com) and can be easily deployed to your cloud hosting - Heroku, Netlify, Gatsby Cloud, etc.
 
-Live Demo: https://flotiq-blog.herokuapp.com/
+Live Demo: https://flotiq-starter-for-events-cal.herokuapp.com/
 
 Screenshot
 
