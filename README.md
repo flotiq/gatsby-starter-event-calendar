@@ -1,58 +1,68 @@
-# Gatsby Starter: Event Calendar for Flotiq 📅
+<a href="https://flotiq.com/">
+    <img src="https://editor.flotiq.com/fonts/fq-logo.svg" alt="Flotiq logo" title="Flotiq" align="right" height="60" />
+</a>
 
-![Homepage](./media/home.jpg)
+Gatsby Starter - Event Calendar
+========================
 
-## Features 🛠
+This is a [Gatsby](https://gatsbyjs.org) starter project for a event calendar. It's configured to pull events data from [Flotiq](https://flotiq.com) and can be easily deployed to your cloud hosting - Heroku, Netlify, Gatsby Cloud, etc.
 
-- [Gatsby](https://www.gatsbyjs.org/)
-- [Grommet](http://grommet.io): A react-based framework that provides accessibility, modularity, responsiveness, and Theming in a tidy package
-- Dynamic content from [Flotiq events](https://flotiq.com/)
-- Offline support
-- A11y support: content and navigation ready for screen readers.
-- PWA ready
-- SEO
-- Responsive design
-- Icons from [grommet-icons](https://github.com/grommet/grommet-icons)
-- [Heroku](https://www.heroku.com) Deployment Friendly
-- Developer tools:
-  - eslint
-  - prettier
+Live Demo: https://flotiq-starter-for-events-cal.herokuapp.com/
 
-## How to start ▶️
+Screenshot
 
-If you never used Gatsby before, I highly recommend you to [set up your development environment](https://www.gatsbyjs.org/tutorial/part-zero/)!
+<img src="https://github.com/flotiq/gatsby-starter-event-calendar/raw/master/docs/flotiq-starter-events.png" width=480 />
 
-To copy and install this starter run this command:
+## Quick start
 
-```bash
-$ gatsby new event-calendar https://github.com/flotiq/gatsby-starter-event-calendar
-```
+1. **Start project from template using Gatsby CLI**
+    
+    ```bash
+    gatsby new event-calendar https://github.com/flotiq/gatsby-starter-event-calendar
+    ```
+   
+1. **Setup "Event" Content Type in Flotiq**
 
-The main data source of this starter is a Event Content Type in [Flotiq.com](https://flotiq.com), after you [register](https://editor.flotiq.com/register.html), you can choose Event when you create your first Content Type Definition (all you need to do is follow the tutorial on Flotiq Dashboard).
+   Create your [Flotiq.com](https://flotiq.com) account. Next, create the `Event` Content Type:
 
-The last step is to configure our application to know from where it has to fetch the data, this is going to be made by using `environment variables`. You need to create a file called `.env` inside the root of the directory, with the following structure:
+   ![Event content type in flotiq](docs/create-definition-event.png)
+    
+   _Note: You can also create `Event` using [Flotiq REST API](https://flotiq.com/docs/API/)._ 
 
-```js
-GATSBY_FLOTIQ_BASE_URL=https://api.flotiq.com
-FLOTIQ_API_KEY=YOUR API KEY
-```
+1. **Configure application**
 
-To get YOUR API KEY check out [documentation](https://flotiq.com/docs/API/).
+    The next step is to configure our application to know from where it has to fetch the data.
+       
+    You need to create a file called `.env` inside the root of the directory, with the following structure:
 
- If you wish to import example events to your account, before running `gatsby develop` run:
-        
-```sh
-node ./example/importExample.js
-```
+    ```
+    GATSBY_FLOTIQ_BASE_URL=https://api.flotiq.com
+    FLOTIQ_API_KEY=YOUR FLOTIQ API KEY
+    ```
 
-It will add 5 events to your Flotiq account.
+1.  **Start developing**
 
-_Note: You need to put your Read and write API key in `.env` for import to work. You don't need Event content type in your account. If you already have events with ids `event-1`, `event-2`, `event-3`, `event-4`, and `event-5` they will be overwritten._
+    Navigate into your new site’s directory and start it up.
 
-After this you can start development:
-```
-gatsby develop
-```
+    ```sh
+    cd event-calendar/
+    npm install
+    gatsby develop
+    ```
+   
+1.  **Open the source code and start editing!**
+    
+    Your site is now running at [http://localhost:8000](http://localhost:8000)!
+    
+    _Note: You'll also see a second link: _[http://localhost:8000/___graphql](http://localhost:8000/___graphql)`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+    
+    Open a project directory in your code editor of choice and edit `src/templates/index.js`. Save your changes and the browser will update in real time!
+
+1. **Manage your posts using Flotiq editor**
+      
+    You can now easily manage your posts using [Flotiq editor](https://editor.flotiq.com)
+    
+    ![Managing events using Flotiq](docs/manage-events.png)
 
 ## App Configuration
 
@@ -125,68 +135,33 @@ Inside the folder [themes](./themes) you can find a few examples I made to show 
 
 #### Main
 
-![Main Screenshot](./media/main-screenshot.png)
+![Main Screenshot](docs/main-screenshot.png)
 
 #### Base
 
-![Base Screenshot](./media/base-screenshot.png)
+![Base Screenshot](docs/base-screenshot.png)
 
 ### Dark
 
-![Dark Screenshot](./media/dark-screenshot.png)
+![Dark Screenshot](docs/dark-screenshot.png)
 
 ### Transparent
 
-![Transparent Screenshot](./media/transparent-screenshot.png)
+![Transparent Screenshot](docs/transparent-screenshot.png)
 
-## Project structure 🏗
+## Deploy
 
-Event calendar starter is an SPA (Single Page Application), so basically it has only two pages:
+  You can deploy this project to Heroku in 3 minutes:
 
-- Index.js (the page itself)
-- 404.js (nice 404 error page that match the style)
-
-The structure for the main page is the following:
-
-```javascript
-<PageLayout>
-  <Hero />
-  <Calendar>
-    <Month />
-    <Month />
-  </Calendar>
-  <ModalEvent />
-</PageLayout>
-```
-
-`PageLayout` is the main of the application, it creates the `ConfigContext` where we have access to all the information inside `appConfig.js` and renders `Grommet` wrapper with the theme of the application.
-
-`Hero` display almost all the information define in `appConfig`, like title, subtitle and a `Button` that redirect to the `formLink` so people can add a new event from the page.
-
-`Calendar` is in charge of executing the query to get the events, then group them by month and render a `Month` component with the grouped events. The amount of rendered `Month` can be changed inside `appConfig.js`.
-
-`ModalEvent` is the popup that is going to be shown when someone clicks on a day with events, and it renders the information of all the events for that day.
-
-## License 📝
-
-MIT.
-
-<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/flotiq/gatsby-starter-event-calendarg)
+  
+  Or to Netlify:
+  
+  [![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/flotiq/gatsby-starter-event-calendar)
 
 
-## 🎓 Learning Gatsby
+## Collaborating
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 🎓 Learning Flotiq
-
-If you're new to Flotiq, head over to [Flotiq Docs](https://flotiq.com/docs) to learn all about it and [Register your free Flotiq account](https://editor.flotiq.com/register.html).
-
-## 💫 Deploy
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/flotiq/gatsby-starter-event-calendar)
-
+   If you wish to to talk with us about this project, feel free to hop on our [discord server](https://discord.gg/FwXcHnX).
+   
+   If you found a bug, please report it in [issues](https://github.com/flotiq/gatsby-starter-event-calendar/issues).
