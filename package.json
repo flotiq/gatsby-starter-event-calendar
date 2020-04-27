@@ -2,7 +2,7 @@
   "name": "gatsby-starter-event-calendar",
   "version": "1.0.0",
   "description": "Starter for Gatsby to display information about events in a nice and clean way",
-  "author": "Ema Suriano <emanuel.suriano@gmail.com>, Flotiq.com <hello@flotiq.com>",
+  "author": "Flotiq Developers <hello@flotiq.com>",
   "engines": {
     "node": "10.x"
   },

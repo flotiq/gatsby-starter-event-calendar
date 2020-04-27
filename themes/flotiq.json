@@ -1,0 +1,41 @@
+{
+  "background": "linear-gradient(to right bottom,#2899a5,#dbfca6)",
+  "brand": "#299BAC",
+  "secondary": "#4DB58E",
+  "focus": "#299BAC",
+  "text": "white",
+
+  "calendar": {
+    "today": {
+      "background": "#299BACDD",
+      "text": "white",
+      "border": "white"
+    },
+    "day": {
+      "background": "#ffffffbb",
+      "text": "black",
+      "border": "white"
+    },
+    "past": {
+      "background": "#ffffff73",
+      "text": "black",
+      "border": "white"
+    },
+    "empty": {
+      "background": "transparent",
+      "border": "white"
+    },
+    "weekdays": {
+      "background": "#ffffff33",
+      "border": "white"
+    },
+    "event": {
+      "background": "#299BACDD",
+      "text": "white"
+    },
+    "modal": {
+      "text": "black",
+      "background": "white"
+    }
+  }
+}

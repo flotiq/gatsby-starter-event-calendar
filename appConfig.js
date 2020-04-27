@@ -1,4 +1,4 @@
-const theme = require('./themes/main.json');
+const theme = require('./themes/flotiq.json');
 
 module.exports = {
   title: 'Gatsby Starter Event Calendar',
