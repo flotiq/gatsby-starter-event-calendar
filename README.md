@@ -53,7 +53,7 @@ Screenshot
     If you wish to import example events to your account, before running `gatsby develop` run:
             
     ```sh
-    node ./example/importExample.js
+    node ./.flotiq/importExample.js
     ```
     
     It will add 5 events to your Flotiq account.
