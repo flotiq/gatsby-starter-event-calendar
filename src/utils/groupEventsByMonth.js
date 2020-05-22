@@ -16,7 +16,7 @@ const groupEventsByMonth = (data, monthsDifference) => {
   const today = new Date();
   const isEventValid = isGreaterInMonth(monthsDifference);
 
-  const eventsByMonthKey = data.allFlotiqEvent.edges.reduce(
+  const eventsByMonthKey = data.allEvent.edges.reduce(
     (acc, { node }) => {
       const eventDate = new Date(node.date);
       if (!isEventValid(today, eventDate)) return acc;

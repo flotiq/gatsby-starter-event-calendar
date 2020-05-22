@@ -1,0 +1,91 @@
+{
+  "name": "event",
+  "label": "Event",
+  "schemaDefinition": {
+    "type": "object",
+    "allOf": [
+      {
+        "$ref": "#/components/schemas/AbstractContentTypeSchemaDefinition"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "slug": {
+            "type": "string",
+            "minLength": 1
+          },
+          "address": {
+            "type": "string",
+            "minLength": 1
+          },
+          "date": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string"
+          },
+          "gallery": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataSource"
+            },
+            "minItems": 0
+          }
+        }
+      }
+    ],
+    "required": [
+      "name",
+      "slug",
+      "address",
+      "date"
+    ],
+    "additionalProperties": false
+  },
+  "metaDefinition": {
+    "propertiesConfig": {
+      "name": {
+        "inputType": "text",
+        "unique": false,
+        "isTitlePart": true
+      },
+      "slug": {
+        "inputType": "text",
+        "unique": true
+      },
+      "address": {
+        "inputType": "textarea",
+        "unique": false
+      },
+      "date": {
+        "inputType": "text",
+        "unique": false
+      },
+      "description": {
+        "inputType": "richtext",
+        "unique": false
+      },
+      "gallery": {
+        "inputType": "datasource",
+        "unique": false,
+        "validation": {
+          "relationContenttype": "_media",
+          "relationMultiple": true
+        }
+      }
+    },
+    "order": [
+      "name",
+      "slug",
+      "address",
+      "date",
+      "description",
+      "gallery"
+    ]
+  }
+}
