@@ -30,14 +30,15 @@ const Hero = () => (
                 }
               `}
               render={data => {
-                const { src } = data.imageSharp.original
                 return (
                   <Box
                     width={size === 'small' ? 'xsmall' : 'small'}
                     height={size === 'small' ? 'xsmall' : 'small'}
                     margin={{ bottom: 'medium' }}
                   >
-                    <Image fit="contain" src={src} a11yTitle="logo" />
+                    {(typeof(data.imageSharp) !== 'undefined' && data.imageSharp.original !== null &&
+                    <Image fit="contain" src={data.imageSharp.original.src} a11yTitle="logo" />
+                    )}
                   </Box>
                 )
               }}
