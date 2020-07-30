@@ -50,27 +50,33 @@
   "metaDefinition": {
     "propertiesConfig": {
       "name": {
+        "label": "Name",
         "inputType": "text",
         "unique": false,
         "isTitlePart": true
       },
       "slug": {
+        "label": "Slug",
         "inputType": "text",
         "unique": true
       },
       "address": {
+        "label": "Address",
         "inputType": "textarea",
         "unique": false
       },
       "date": {
+        "label": "Date",
         "inputType": "text",
         "unique": false
       },
       "description": {
+        "label": "Description",
         "inputType": "richtext",
         "unique": false
       },
       "gallery": {
+        "label": "Gallery",
         "inputType": "datasource",
         "unique": false,
         "validation": {
