@@ -9,7 +9,6 @@ module.exports = {
     {
       "resolve": "gatsby-source-flotiq",
       "options": {
-        "baseUrl": process.env.GATSBY_FLOTIQ_BASE_URL,
         "authToken": process.env.GATSBY_FLOTIQ_API_KEY,
         "forceReload": false,
         "includeTypes": ['event', '_media']

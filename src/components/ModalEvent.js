@@ -73,7 +73,7 @@ const ModalEvent = ({ hideModal, currentDay, events }) => (
               )}
               <div style={{display: 'flex'}}>
               {event.gallery && event.gallery.map((image) =>
-                  <Image fit="contain" src={`${process.env.GATSBY_FLOTIQ_BASE_URL}/image/100x0/${image.id}.${image.extension}`} a11yTitle="gallery image" />
+                  <Image fit="contain" src={`https://api.flotiq.com/image/100x0/${image.id}.${image.extension}`} a11yTitle="gallery image" />
               )}
               </div>
           </Box>

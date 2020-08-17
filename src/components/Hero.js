@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { Box, Heading, Button, Text, Image, ResponsiveContext } from 'grommet'
-import { graphql, StaticQuery } from 'gatsby'
 import ConfigContext from './ConfigContext'
+import icon from '../../media/icon.png';
 
 const Hero = () => (
   <ConfigContext.Consumer>
@@ -19,30 +19,15 @@ const Hero = () => (
             pad="medium"
             animation="slideDown"
           >
-            <StaticQuery
-              query={graphql`
-                {
-                  imageSharp {
-                    original {
-                      src
-                    }
-                  }
-                }
-              `}
-              render={data => {
-                return (
-                  <Box
-                    width={size === 'small' ? 'xsmall' : 'small'}
-                    height={size === 'small' ? 'xsmall' : 'small'}
-                    margin={{ bottom: 'medium' }}
-                  >
-                    {(typeof(data.imageSharp) !== 'undefined' && data.imageSharp.original !== null &&
-                    <Image fit="contain" src={data.imageSharp.original.src} a11yTitle="logo" />
-                    )}
-                  </Box>
-                )
-              }}
-            />
+
+            <Box
+              width={size === 'small' ? 'xsmall' : 'small'}
+              height={size === 'small' ? 'xsmall' : 'small'}
+              margin={{ bottom: 'medium' }}
+            >
+              <Image fit="contain" src={icon} a11yTitle="logo" />
+            </Box>
+
 
             <Heading size="large" align="center" a11yTitle="Application title">
               {appConfig.title}
