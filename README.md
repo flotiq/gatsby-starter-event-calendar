@@ -15,7 +15,16 @@ Screenshot
 
 ## Quick start
 
-1. **Start project from template using Gatsby CLI**
+1. **Start the project from template using [Flotiq CLI]((https://github.com/flotiq/flotiq-cli))**
+
+    ```bash
+   npm install -g flotiq-cli
+   flotiq start [flotiqApiKey] [projectName] https://github.com/flotiq/gatsby-starter-event-calendar
+    ```
+   * `flotiqApKey` - Read and write API key to your Flotiq account      
+   * `projectName` - project name or project path (if you wish to start or import data from the current directory - use `.`)
+
+1. **You can also start the project from template using Gatsby CLI**
     
     ```bash
     gatsby new event-calendar https://github.com/flotiq/gatsby-starter-event-calendar
@@ -49,15 +58,17 @@ Screenshot
     gatsby develop
     ```
     
-    If you wish to import example events to your account, before running `gatsby develop` run:
+    This step is optional and is not necessary if you used flotiq-cli to start the project.
+          
+    If you wish to import example events to your account, before running `gatsby develop`, install [flotiq-cli](https://github.com/flotiq/flotiq-cli), and run in project directory:
             
     ```sh
-    node ./.flotiq/importExample.js
+    flotiq import [flotiqApiKey] .
     ```
     
     It will add 5 events to your Flotiq account.
     
-    _Note: You need to put your Read and write API key in `.env` for import to work. You don't need Event content type in your account. If you already have events with ids `event-1`, `event-2`, `event-3`, `event-4`, and `event-5` they will be overwritten._
+    _Note: You need to put your Read and write API key as the `flotiqApiKey` for import to work. You don't need Event content type in your account. If you already have events with ids `event-1`, `event-2`, `event-3`, `event-4`, and `event-5` they will be overwritten._
     
     _Note: Import data may contain events in the past. You should change them to future dates to see events on the page._
    
@@ -173,6 +184,6 @@ Inside the folder [themes](./themes) you can find a few examples I made to show 
 
 ## Collaborating
 
-   If you wish to to talk with us about this project, feel free to hop on our [discord server](https://discord.gg/FwXcHnX).
+   If you wish to to talk with us about this project, feel free to hop on our [![Discord Chat](https://img.shields.io/discord/682699728454025410.svg)](https://discord.gg/FwXcHnX).
    
    If you found a bug, please report it in [issues](https://github.com/flotiq/gatsby-starter-event-calendar/issues).
