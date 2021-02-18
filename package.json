@@ -16,7 +16,7 @@
     "gatsby-plugin-sharp": "^2.10.1",
     "gatsby-plugin-styled-components": "^3.6.0",
     "gatsby-source-filesystem": "^2.7.0",
-    "gatsby-source-flotiq": "^2.2.1",
+    "gatsby-source-flotiq": "^2.2.3",
     "gatsby-transformer-sharp": "^2.8.0",
     "grommet": "^2.16.0",
     "grommet-icons": "^4.5.0",
